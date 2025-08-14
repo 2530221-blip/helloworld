@@ -2,13 +2,47 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>나의 첫 웹사이트</title>
-  <link rel="stylesheet" href="style.css">
+  <title>전화번호 입력 예제</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input[type="tel"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-  <h1>안녕하세요!</h1>
-  <p>이것은 나의 첫 웹사이트입니다.</p>
-  <button onclick="showAlert()">클릭하세요</button>
-  <script src="script.js"></script>
+  <h1>전화번호 입력</h1>
+  <input type="tel" id="phone" placeholder="전화번호 입력">
+  <button onclick="submitPhone()">제출</button>
+
+  <script>
+    function submitPhone() {
+      const phoneNumber = document.getElementById('phone').value;
+      if(phoneNumber) {
+        alert('입력한 전화번호: ' + phoneNumber);
+      } else {
+        alert('전화번호를 입력해주세요!');
+      }
+    }
+  </script>
 </body>
 </html>
